@@ -4722,6 +4722,12 @@
       });
     }
   }, 0),
+    document.addEventListener("click", (t) => {
+      t.target.classList.contains("menu__link") &&
+        document.documentElement.classList.contains("menu-open") &&
+        (document.documentElement.classList.remove("menu-open"),
+        document.documentElement.classList.remove("lock"));
+    }),
     (window.FLS = !0),
     (function (t) {
       let e = new Image();

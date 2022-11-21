@@ -13,7 +13,7 @@
   font-weight: 400;
   font-style: normal;
 }
-.bottom-block__place::before, .bottom-block__iso::before, .bottom-block__diafragm::before, .bottom-block__time::before, .footer__facebook::after, .footer__instagram::after, .footer__twitter::after, [class*=_icon-]:before {
+.get-in-touch__circle::before, .what-we-do__circle::before, .bottom-block__place::before, .bottom-block__iso::before, .bottom-block__diafragm::before, .bottom-block__time::before, .footer__facebook::after, .footer__instagram::after, .footer__twitter::after, [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
   font-weight: normal;
@@ -54,6 +54,14 @@
 
 ._icon-twitter:before {
   content: "\e806";
+}
+
+._icon-forward:before {
+  content: "\e807";
+}
+
+._icon-right:before {
+  content: "\f178";
 }
 
 * {
@@ -416,7 +424,6 @@ body.popup-show::after {
 }
 .menu__body {
   display: flex;
-  position: relative;
 }
 @media (max-width: 61.99875em) {
   .menu__body {
@@ -431,7 +438,6 @@ body.popup-show::after {
   }
 }
 .menu-open .menu__body {
-  transition: all 0.5s ease 0s;
   left: 0;
 }
 .menu-open .menu__body::after {
@@ -467,7 +473,6 @@ body.popup-show::after {
     display: flex;
     position: absolute;
     align-items: center;
-    gap: 40px;
     overflow: auto;
   }
 }
@@ -476,6 +481,9 @@ body.popup-show::after {
     width: 100%;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+  }
+  .menu__item:not(:last-child) {
+    margin-bottom: 40px;
   }
 }
 @media (min-width: 90em) {
@@ -1073,7 +1081,8 @@ body.popup-show::after {
 .bottom-block__time::before {
   font-size: 16px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
   left: -22px;
   content: "\e805";
   color: #fff;
@@ -1086,7 +1095,8 @@ body.popup-show::after {
 .bottom-block__diafragm::before {
   font-size: 16px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
   left: -22px;
   content: "\e800";
   color: #fff;
@@ -1100,7 +1110,8 @@ body.popup-show::after {
 .bottom-block__iso::before {
   font-size: 16px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
   left: -22px;
   content: "\e802";
   color: #fff;
@@ -1113,7 +1124,8 @@ body.popup-show::after {
 .bottom-block__place::before {
   font-size: 16px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
   left: -16px;
   content: "\e804";
   color: #fff;
@@ -1221,16 +1233,28 @@ body.popup-show::after {
   height: 42px;
   border-radius: 14px;
   padding: 0px 4px 0px 4px;
+  transition: all 0.3s ease 0s;
 }
 @media (any-hover: hover) {
   .what-we-do__button:hover {
-    transition: all 0.3s ease 0s;
     background-color: #c0c0c0;
+    transition: all 0.3s ease 0s;
   }
 }
 .what-we-do__circle {
   width: 32px;
   height: 32px;
+  position: relative;
+}
+.what-we-do__circle::before {
+  position: absolute;
+  content: "\f178";
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-43%, -48%);
+  font-size: 14px;
+  z-index: 5;
 }
 .what-we-do__text-button {
   font-weight: 400;
@@ -1664,6 +1688,7 @@ body.popup-show::after {
   height: 42px;
   border-radius: 14px;
   padding: 0px 4px 0px 4px;
+  transition: all 0.3s ease 0s;
 }
 @media (any-hover: hover) {
   .get-in-touch__button:hover {
@@ -1674,6 +1699,17 @@ body.popup-show::after {
 .get-in-touch__circle {
   width: 32px;
   height: 32px;
+  position: relative;
+}
+.get-in-touch__circle::before {
+  position: absolute;
+  content: "\f178";
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-43%, -48%);
+  font-size: 14px;
+  z-index: 5;
 }
 .get-in-touch__text-button {
   font-weight: 400;
@@ -12484,4 +12520,23 @@ ul {
 .row > * {
   padding-right: 0;
   padding-left: 0;
+}
+.row > *.clients__item-padding {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffffff;
+}
+a.header__link:visited {
+  color: black;
 }
