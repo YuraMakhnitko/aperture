@@ -12540,3 +12540,21 @@ a:visited {
 a.header__link:visited {
   color: black;
 }
+a.footer__instagram:visited {
+  color: #c0c0c0;
+}
+a.footer__instagram:hover {
+  color: #ffffff;
+}
+a.footer__twitter:visited {
+  color: #c0c0c0;
+}
+a.footer__twitter:hover {
+  color: #ffffff;
+}
+a.footer__facebook:visited {
+  color: #c0c0c0;
+}
+a.footer__facebook:hover {
+  color: #ffffff;
+}
